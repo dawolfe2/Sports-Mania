@@ -1,0 +1,342 @@
+
+header {
+
+	nav {
+		position: fixed;
+		z-index: 1000;
+		background: #DC143C;
+
+
+		ul {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			li {
+
+				a {
+					line-height: 1;
+				}
+
+				&:hover {
+					background: transparent;
+				}
+			}
+
+			#menu {
+
+			}
+
+			#title {
+				font-size: 22px;
+				font-weight: 300;
+			}
+
+			#more {
+
+			}
+		}
+	}
+}
+
+main {
+	padding-top: 64px;
+	padding-bottom: 300px;
+
+
+	.jumbo {
+		width: 100%;
+		height: 400px;
+		background: ('users/navkiransingh/downloads/ramiro-pianarosa-8hW2ZB4OHZ0-unsplash.jpg'
+		background: url(https://images.unsplash.com/photo-1532040683343-edbde6dd500d?ixlib=rb-4.0.3&dl=ramiro-pianarosa-8hW2ZB4OHZ0-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb) center center no-repeat;
+		background-size: cover;
+	}
+
+	.icons {
+		display: flex;
+		justify-content: space-between;
+
+		.big-icon {
+			width: 180px;
+			height: 180px;
+			background: url(https://images.unsplash.com/photo-1610088441520-4352457e7095?ixlib=rb-4.0.3&dl=meysam-jarahkar-LI7jB1925j0-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb) center top;
+			background-size: 140%;
+			border-radius: 50%;
+			border: 2px solid white;
+			margin-top: -90px;
+		}
+
+		.rate {
+			width: 125px;
+			display: flex;
+			justify-content: space-between;
+			order: -1;
+
+			.star-btn {
+				margin-top: -27.5px;
+
+				i {
+					font-size: 26px;
+				}
+			}
+
+			.like-btn {
+				margin-top: -27.5px;
+
+				i {
+					font-size: 22px;
+				}
+			}
+		}
+
+		.add {
+			width: 125px;
+			display: flex;
+			justify-content: flex-end;
+
+			.add-btn {
+				margin-top: -27.5px;
+
+				i {
+					font-size: 28px;
+				}
+			}
+		}
+	}
+
+	.details {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 50px;
+
+		h3 {
+			color: #212121;
+			font-size: 28px;
+			margin-top: 15px;
+		}
+
+		p {
+			color: #727272;
+			margin-top: 0px;
+		}
+	}
+
+	.bio {
+		margin-bottom: 80px;
+
+		.title {
+
+			h6 {
+				color: #212121;
+				font-size: 18px;
+			}
+		}
+
+		.content {
+
+			p {
+				color: #727272;
+			}
+		}
+	}
+
+	.pics {
+		margin-bottom: 50px;
+
+		.title {
+			margin-bottom: 20px;
+
+			h6 {
+				color: #212121;
+				font-size: 18px;
+			}
+		}
+
+		.row-1 {
+
+			.s12:nth-of-type(2) {
+				margin-bottom: -10px;
+			}
+		}
+
+		.row {
+
+			.s12:nth-of-type(1) {
+				margin-bottom: 10px;
+			}
+
+			.col {
+
+				.card {
+					height: 260px;
+
+					#first-img {
+						height: 100%;
+						background: url(https://images.unsplash.com/photo-1474224017046-182ece80b263?ixlib=rb-4.0.3&dl=nick-jio-57rD2oDZquc-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb) center center;
+						background-size: cover;
+					}
+
+					#second-img {
+						height: 100%;
+						background: url(https://images.unsplash.com/photo-1584770557404-a5d2a798e81a?ixlib=rb-4.0.3&dl=dean-bennett-nFjLHE4vmn4-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb) center center;
+						background-size: cover;
+					}
+
+					#third-img {
+						height: 100%;
+						background: url(https://images.unsplash.com/photo-1600621894267-8b39c5144709?ixlib=rb-4.0.3&dl=david-vives-cBWgXg-hYNs-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb) center center;
+						background-size: cover;
+					}
+
+					#forth-img {
+						height: 100%;
+						background: url(https://images.unsplash.com/photo-1551479460-5e76c686816a?ixlib=rb-4.0.3&dl=alex-haney-TcNyK8ly1jE-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb) center center;
+						background-size: cover;
+					}
+				}
+			}
+		}
+	}
+
+	.posts {
+		margin-bottom: 50px;
+
+		.title {
+
+			h6 {
+				color: #212121;
+				font-size: 18px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.row {
+			margin-bottom: 0px;
+
+			.col {
+
+				.card {
+					position: relative;
+
+					.card-action {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						.tags {
+							display: flex;
+
+							.chip:first-child {
+								margin-right: 5px;
+							}
+						}
+
+						.card-love {
+							cursor: pointer;
+							font-size: 25px;
+							position: absolute;
+							right: 10px;
+							top: 10px;
+							color: white;
+							transition: all 100ms ease-in-out;
+
+							&:hover {
+								color: #f9a825;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.blogs {
+		margin-bottom: 80px;
+
+		.title {
+			margin-bottom: 20px;
+
+			h6 {
+				color: #212121;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.likes {
+
+		.title {
+			margin-bottom: 20px;
+
+			h6 {
+				color: #DC143C;
+				font-size: 18px;
+			}
+		}
+
+		.row {
+
+			.col {
+
+				.tabs {
+					margin-bottom: 10px;
+					box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+				}
+			}
+		}
+	}
+
+	.stretch {
+		height: 500px;
+	}
+
+	.fab {
+		transition: all 120ms ease-in-out;
+		bottom: 20px !important;
+
+		.btn-large {
+
+			i {
+				font-size: 40px;
+			}
+		}
+
+		.orange {
+
+			i {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	main {
+		padding-top: 40px;
+	}
+
+	.jumbo {
+		height: 200px !important;
+	}
+
+	.icons {
+		justify-content: center !important;
+	}
+
+	.rate {
+		display: none !important;
+	}
+
+	.add {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 600px) {
+
+	.fab {
+		display: none;
+	}
+}

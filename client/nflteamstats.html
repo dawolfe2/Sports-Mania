@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NFL Team Stats</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body onload="keeplive()">
+    <header>
+      <h1 class="sportstitle">Sports Mania</h1>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="teamsearch.html">Teams</a></li>
+          <li><a href="playersearch.html">Players</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      <a id="loginstatus" class="login" href="login.html"
+        ><button id="navbutton" class="navbutton">Login</button></a
+      >
+    </header>
+
+    <p id="teamname">Team Name</p>
+    <img src="pics/no-image.jpg" id="teampic" alt="team img" />
+    <p>2022 Season Stats:</p>
+    <p>-Win Stats-</p>
+    <p id="gamesplayed"></p>
+    <p id="gameswon"></p>
+    <p id="gameslost"></p>
+    <p id="winrate"></p>
+    <p>-Receiving Stats-</p>
+    <p id="receivesRec"></p>
+    <p id="touchdownsRec"></p>
+    <p id="yardsRec"></p>
+    <p>-Rushing Stats-</p>
+    <p id="touchdownsRush"></p>
+    <p id="yardsRush"></p>
+    <p>-Passing Stats-</p>
+    <p id="completions"></p>
+    <p id="touchdownsPass"></p>
+    <p id="yardsPass"></p>
+
+    <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="nflteamstats.js"></script>
+  </body>
+</html>

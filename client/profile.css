@@ -1,0 +1,67 @@
+.favorite {
+    background-color: rgb(74, 77, 78);
+    width: 25%;
+    margin: auto;
+    border: 3px solid rgb(0, 0, 0);
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.body {
+    /* background-image: linear-gradient(red, yellow); */
+}
+
+.favtitle {
+    font-size: 50px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.userstatus {
+    text-align: right;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+.ppic {
+    width: 280px;
+    height: 220px;
+}
+
+.tpic {
+    width: 350px;
+    height: 200px;
+}
+
+.pfavs1 {
+    display: flex;
+    padding: 10px;
+}
+
+.pfavs2 {
+    display: flex;
+    padding: 10px;
+}
+
+.tfavs1 {
+    display: flex;
+    padding: 10px;
+}
+
+.tfavs2 {
+    display: flex;
+    padding: 10px;
+}
+
+button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}

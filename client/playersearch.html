@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Player Search</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body onload="keeplive()">
+    <header>
+      <h1 class="sportstitle">Sports Mania</h1>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="teamsearch.html">Teams</a></li>
+          <li><a href="playersearch.html">Players</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      <a id="loginstatus" class="login" href="login.html"
+        ><button id="navbutton" class="navbutton">Login</button></a>
+    </header>
+
+
+    <div class="search-box">
+      <div class="form">
+        <input class="forminput" id="search" type="text" title="search" placeholder="search player name" />
+        <button class="search-btn" onClick="searchplayers()">Search for Players</button>
+      </div>
+      <div class="sport-pick">
+        <label for="nba">NBA</label>
+        <input type="radio" name="sport" value="nba" id="radioNBA" checked="checked" />
+    
+        <label for="nfl">NFL</label>
+        <input type="radio" name="sport" value="nfl" id="radioNFL" />
+
+        <label for="nhl">NHL</label>
+        <input type="radio" name="sport" value="nhl" id="radioNHL" />
+      </div>
+    </div>
+
+    <p class="searchresult" id="searchresult"></p>
+
+    <div class="flex-container">
+      
+      <div id="divp1" class="search-result" style="display:none">
+        <div class="sch-profile">
+          <button class ="profile-btn" id="profile1" onClick="profile1()">Profile</button>
+          <p id="playername1">player1</p>
+          <p id="playerposition1"></p>
+          <img src="pics/no-image.jpg" id="playerpic1" alt="player1 img" />
+          <p id="team1">team1</p>
+        </div>
+        <table class="sch-stats">
+          <thead>
+            <tr>
+              <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+            </tr>
+          </thead>
+            <tr>
+              <td><span class="stat-title" id="1stat1label">Average Points</span></td>
+              <td><span class="stat" id="1stat1">s1: Average Points</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="1stat2label">Rebounds</span></td>
+              <td><span class="stat" id="1stat2">s2: Rebounds</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="1stat3label">Assists</span></td>
+              <td><span class="stat" id="1stat3">s3: Assists</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="1stat4label"> 3-Pointer Percent</span></td>
+              <td><span class="stat" id="1stat4">s4: 3-Pointers</span></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="divp2" class="search-result" style="display:none">
+          <div class="sch-profile">
+            <button class ="profile-btn" id="profile2" onClick="profile2()">Profile</button>
+            <p id="playername2">player2</p>
+            <p id="playerposition2"></p>
+            <img src="pics/no-image.jpg" id="playerpic2" alt="player2 img" />
+            <p id="team2">team2</p>
+          </div>
+          <table class="sch-stats">
+            <thead>
+              <tr>
+                <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+              </tr>
+            </thead>
+            <tr>
+              <td><span class="stat-title" id="2stat1label">Average Points</span></td>
+              <td><span class="stat" id="2stat1">s1: Average Points</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="2stat2label">Rebounds</span></td>
+              <td><span class="stat" id="2stat2">s2: Rebounds</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="2stat3label">Assists</span></td>
+              <td><span class="stat" id="2stat3">s3: Assists</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="2stat4label"> 3-Pointer Percent</span></td>
+              <td><span class="stat" id="2stat4">s4: 3-Pointers</span></td>
+            </tr>
+            </table>
+          </div>
+
+      <div id="divp3" class="search-result" style="display:none">
+        <div class="sch-profile">
+          <button class ="profile-btn" id="profile3" onClick="profile3()">Profile</button>
+          <p id="playername3">player3</p>
+          <p id="playerposition3"></p>
+          <img src="pics/no-image.jpg" id="playerpic3" alt="player3 img" />
+          <p id="team3">team3</p>
+        </div>
+        <table class="sch-stats">
+          <thead>
+            <tr>
+              <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+            </tr>
+          </thead>
+          <tr>
+            <td><span class="stat-title" id="3stat1label">Average Points</span></td>
+            <td><span class="stat" id="3stat1">s1: Average Points</span></td>
+          </tr>
+          <tr>
+            <td><span class="stat-title" id="3stat2label">Rebounds</span></td>
+            <td><span class="stat" id="3stat2">s2: Rebounds</span></td>
+          </tr>
+          <tr>
+            <td><span class="stat-title" id="3stat3label">Assists</span></td>
+            <td><span class="stat" id="3stat3">s3: Assists</span></td>
+          </tr>
+          <tr>
+            <td><span class="stat-title" id="3stat4label"> 3-Pointer Percent</span></td>
+            <td><span class="stat" id="3stat4">s4: 3-Pointers</span></td>
+          </tr>
+          </table>
+        </div>
+
+        <div id="divp4" class="search-result" style="display:none">
+          <div class="sch-profile">
+            <button class ="profile-btn" id="profile4" onClick="profile4()">Profile</button>
+            <p id="playername4">player4</p>
+            <p id="playerposition4"></p>
+            <img src="pics/no-image.jpg" id="playerpic4" alt="player4 img" />
+            <p id="team4">team4</p>
+          </div>
+          <table class="sch-stats">
+            <thead>
+              <tr>
+                <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+              </tr>
+            </thead>
+            <tr>
+              <td><span class="stat-title" id="4stat1label">Average Points</span></td>
+              <td><span class="stat" id="4stat1">s1: Average Points</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="4stat2label">Rebounds</span></td>
+              <td><span class="stat" id="4stat2">s2: Rebounds</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="4stat3label">Assists</span></td>
+              <td><span class="stat" id="4stat3">s3: Assists</span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title" id="4stat4label"> 3-Pointer Percent</span></td>
+              <td><span class="stat" id="4stat4">s4: 3-Pointers</span></td>
+            </tr>
+            </table>
+          </div>
+
+          <div id="divp5" class="search-result" style="display:none">
+            <div class="sch-profile">
+              <button class ="profile-btn" id="profile5" onClick="profile5()">Profile</button>
+              <p id="playername5">player5</p>
+              <p id="playerposition5"></p>
+              <img src="pics/no-image.jpg" id="playerpic5" alt="player5 img" />
+              <p id="team5">team5</p>
+            </div>
+            <table class="sch-stats">
+              <thead>
+                <tr>
+                  <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+                </tr>
+              </thead>
+              <tr>
+                <td><span class="stat-title" id="5stat1label">Average Points</span></td>
+                <td><span class="stat" id="5stat1">s1: Average Points</span></td>
+              </tr>
+              <tr>
+                <td><span class="stat-title" id="5stat2label">Rebounds</span></td>
+                <td><span class="stat" id="5stat2">s2: Rebounds</span></td>
+              </tr>
+              <tr>
+                <td><span class="stat-title" id="5stat3label">Assists</span></td>
+                <td><span class="stat" id="5stat3">s3: Assists</span></td>
+              </tr>
+              <tr>
+                <td><span class="stat-title" id="5stat4label"> 3-Pointer Percent</span></td>
+                <td><span class="stat" id="5stat4">s4: 3-Pointers</span></td>
+              </tr>
+              </table>
+            </div>
+
+            <div id="divp6" class="search-result" style="display:none">
+              <div class="sch-profile">
+                <button class ="profile-btn" id="profile6" onClick="profile6()">Profile</button>
+                <p id="playername6">player6</p>
+                <p id="playerposition6"></p>
+                <img src="pics/no-image.jpg" id="playerpic6" alt="player6 img" />
+                <p id="team6">team6</p>
+              </div>
+              <table class="sch-stats">
+                <thead>
+                  <tr>
+                    <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td><span class="stat-title" id="6stat1label">Average Points</span></td>
+                  <td><span class="stat" id="6stat1">s1: Average Points</span></td>
+                </tr>
+                <tr>
+                  <td><span class="stat-title" id="6stat2label">Rebounds</span></td>
+                  <td><span class="stat" id="6stat2">s2: Rebounds</span></td>
+                </tr>
+                <tr>
+                  <td><span class="stat-title" id="6stat3label">Assists</span></td>
+                  <td><span class="stat" id="6stat3">s3: Assists</span></td>
+                </tr>
+                <tr>
+                  <td><span class="stat-title" id="6stat4label"> 3-Pointer Percent</span></td>
+                  <td><span class="stat" id="6stat4">s4: 3-Pointers</span></td>
+                </tr>
+                </table>
+              </div>
+
+              <div id="divp7" class="search-result" style="display:none">
+                <div class="sch-profile">
+                  <button class ="profile-btn" id="profile7" onClick="profile7()">Profile</button>
+                  <p id="playername7">player7</p>
+                  <p id="playerposition7"></p>
+                  <img src="pics/no-image.jpg" id="playerpic7" alt="player7 img" />
+                  <p id="team7">team7</p>
+                </div>
+                <table class="sch-stats">
+                  <thead>
+                    <tr>
+                      <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td><span class="stat-title" id="7stat1label">Average Points</span></td>
+                    <td><span class="stat" id="7stat1">s1: Average Points</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat-title" id="7stat2label">Rebounds</span></td>
+                    <td><span class="stat" id="7stat2">s2: Rebounds</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat-title" id="7stat3label">Assists</span></td>
+                    <td><span class="stat" id="7stat3">s3: Assists</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat-title" id="7stat4label"> 3-Pointer Percent</span></td>
+                    <td><span class="stat" id="7stat4">s4: 3-Pointers</span></td>
+                  </tr>
+                  </table>
+                </div>
+
+                <div id="divp8" class="search-result" style="display:none">
+                  <div class="sch-profile">
+                    <button class ="profile-btn" id="profile8" onClick="profile8()">Profile</button>
+                    <p id="playername8">player8</p>
+                    <p id="playerposition8"></p>
+                    <img src="pics/no-image.jpg" id="playerpic8" alt="player8 img" />
+                    <p id="team8">team8</p>
+                  </div>
+                  <table class="sch-stats">
+                    <thead>
+                      <tr>
+                        <td colspan="2" class="table-title" align="center"> Season 2022 Averages</td>
+                      </tr>
+                    </thead>
+                    <tr>
+                      <td><span class="stat-title" id="8stat1label">Average Points</span></td>
+                      <td><span class="stat" id="8stat1">s1: Average Points</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="stat-title" id="8stat2label">Rebounds</span></td>
+                      <td><span class="stat" id="8stat2">s2: Rebounds</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="stat-title" id="8stat3label">Assists</span></td>
+                      <td><span class="stat" id="8stat3">s3: Assists</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="stat-title" id="8stat4label"> 3-Pointer Percent</span></td>
+                      <td><span class="stat" id="8stat4">s4: 3-Pointers</span></td>
+                    </tr>
+                    </table>
+                  </div>
+    </div>
+
+  
+    <script src="keeplive.js"></script>
+    <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+    <script src="playersearch.js"></script>
+  </body>
+</html>

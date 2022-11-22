@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NHL Team Stats</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body onload="keeplive()">
+    <header>
+      <h1 class="sportstitle">Sports Mania</h1>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="teamsearch.html">Teams</a></li>
+          <li><a href="playersearch.html">Players</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      <a id="loginstatus" class="login" href="login.html"
+        ><button id="navbutton" class="navbutton">Login</button></a
+      >
+    </header>
+
+   <div class="team-profile">
+      <div class="L">
+        <p id="teamname">Team Name</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic" alt="team img" />
+        <button class="profile-btn" onclick="favorite()">Favorite</button>
+        <p id="favmessage"></p>
+      </div>
+      <div class="R">
+        <table class="team-stat">
+          <thead>
+            <td colspan="2" class="season-num" align="center">2022 Season Averages</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="stat-title">Games Played</span></td>
+              <td><span class="stat" id="gamesplayed"></span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title">Games Won</span></td>
+              <td><span class="stat" id="gameswon"></span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title">Games Lost</span></td>
+              <td><span class="stat" id="gameslost"></span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title">Winrate</span></td>
+              <td><span class="stat" id="winrate"></span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title">Goals per Game</span></td>
+              <td><span class="stat" id="gpg"></span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title">Goals Against per Game</span></td>
+              <td><span class="stat" id="gapg"></span></td>
+            </tr>
+            <tr>
+              <td><span class="stat-title">Face Off Win%</span></td>
+              <td><span class="stat" id="fowp"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   
+   </div>
+
+    <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="nhlteamstats.js"></script>
+  </body>
+</html>

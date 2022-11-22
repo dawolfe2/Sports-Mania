@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* beginning for navigation bar */
+
+li,
+a,
+button {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+header {
+	display: flex;
+	margin: 0;
+	align-items: center;
+	padding-left: 6%;
+	padding-right: 8%;
+	background-color: #ffffff;
+	border-style: ridge;
+	border-color: rgb(119, 23, 23);
+}
+
+.logo {
+	cursor: pointer;
+}
+
+.navigation {
+	display: flex;
+	list-style: none;
+	margin-left: auto;
+}
+
+.navigation li {
+	padding: 0px 20px;
+
+}
+
+.navigation li a {
+	transition: all 0.3s ease 0s;
+}
+
+.naviation li a:hover {
+	color: #0088a9
+}
+
+.sportstitle {
+	background-color: #CA4246;
+	background-image: linear-gradient(45deg,
+			#CA4246 16.666%,
+			#E16541 16.666%,
+			#E16541 33.333%,
+			#F18F43 33.333%,
+			#F18F43 50%,
+			#8B9862 50%,
+			#8B9862 66.666%,
+			#476098 66.666%,
+			#476098 83.333%,
+			#A7489B 83.333%);
+	background-size: 100%;
+	background-repeat: repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 50px;
+}
+
+.sportstitle:hover {
+	animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+
+@keyframes rainbow-text-simple-animation-rev {
+	0% {
+		background-size: 650%;
+	}
+
+	40% {
+		background-size: 650%;
+	}
+
+	100% {
+		background-size: 100%;
+	}
+}
+
+@keyframes rainbow-text-simple-animation {
+	0% {
+		background-size: 100%;
+	}
+
+	80% {
+		background-size: 650%;
+	}
+
+	100% {
+		background-size: 650%;
+	}
+}
+
+button.navbutton {
+	margin-left: 20px;
+	padding: 9px 25px;
+	background-color: rgb(223, 83, 48);
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+button:hover {
+	background-color: rgba(0, 136, 169, 0.9);
+}
+
+button.login {
+	font-size: 16px;
+	font-weight: 200;
+	letter-spacing: 1px;
+	padding: 13px 20px 13px;
+	outline: 0;
+	border: 1px solid black;
+	cursor: pointer;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+/* begin for login & signup pages */
+
+.signup-div {
+	margin: 100px auto;
+	width: 550px;
+	background-color: rgb(255, 163, 57);
+	padding: 60px;
+	border-style: solid;
+	border-color: black;
+}
+
+
+.login-div {
+	margin: 100px auto;
+	width: 350px;
+	background-color: rgb(255, 163, 57);
+	padding: 60px;
+	border-style: solid;
+	border-color: black;
+}
+
+.logo {
+	background-color: purple;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.title,
+.subtitle {
+	text-align: center;
+	color: rgb(0, 0, 0)
+}
+
+.title {
+	font-weight: bolder;
+	font-size: 35px;
+}
+
+.sub-title {
+	font-size: 18px;
+}
+
+.loginform {
+	text-align: center;
+}
+
+.loginform input {
+	font-size: 18px;
+	padding: 10px 20px 10px 5px;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+.username,
+.password,
+.Fname,
+.fullname,
+.email {
+	display: block;
+	border-radius: 30px;
+	border: 1px solid rgba (0, 0. 0. 0.2) padding 15px;
+	margin: 10px 0;
+	background-color: rgb(235, 229, 229);
+	text-align: left;
+}
+
+.loginform svg {
+	height: 25px;
+	margin-bottom: -5px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.options {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5px 0px;
+	margin-bottom: 30px;
+}
+
+/*
+button.submitbtn {
+	width: 100%;
+	padding: 12px 10px;
+	border: none;
+	font-size: 18px;
+	border-radius: 30px;
+	background-color: pink;
+	color: red;
+	margin-bottom: 5px;
+}
+*/
+
+.submitbtn {
+	align-items: center;
+	font-size: 16px;
+	font-weight: 200;
+	letter-spacing: 1px;
+	padding: 13px 20px 13px;
+	outline: 0;
+	border: 1px solid black;
+	cursor: pointer;
+	position: relative;
+	background-color: rgb(161, 161, 161);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	color: black;
+}
+
+.submitbtn:after {
+	content: "";
+	background-color: #ffe54c;
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	height: 100%;
+	top: 7px;
+	left: 7px;
+	transition: 0.2s;
+}
+
+.submitbtn:hover:after {
+	top: 0px;
+	left: 0px;
+}
+
+@media (min-width: 768px) {
+	..submitbtn {
+		padding: 13px 50px 13px;
+	}
+}
+
+.signup {
+	text-align: center;
+}
+
+
+
+/* beginning for nba-player-stat page */
+
+.stat-board {
+	border-collapse: collapse;
+	width: 90%;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, .15);
+	margin: 25px auto;
+	letter-spacing: 1px;
+	padding: 8px;
+}
+
+.stat-board tr td,
+.team-stat tr td,
+.sch-stats tr td {
+	padding: 8px;
+}
+
+.stat-board tbody tr td:nth-last-child(1),
+.sch-stats tbody tr td:nth-last-child(1) {
+	text-align: right;
+}
+
+.stat-board tr:nth-child(1) td:nth-last-child(1) {
+	text-align: right;
+}
+
+.columnL {
+	float: left;
+	width: 25%;
+	background-color: rgb(22, 22, 22);
+}
+
+.columnR {
+	float: left;
+	width: 70%;
+	background-color: rgb(255, 255, 255);
+	border-style: ridge;
+	border-color: black;
+}
+
+.stat,
+.stat-title {
+	color: black;
+}
+
+button.favbutton {
+	background-color: #ff7707;
+	border-radius: 12px;
+	color: #000;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 10px 15px;
+	text-align: center;
+	transition: 200ms;
+	width: 100%;
+	box-sizing: border-box;
+	border: 0;
+	font-size: 16px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+
+}
+
+.season-num {
+	font-family: verdana;
+	font: bold;
+	font-size: larger;
+}
+
+.charthead {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.stat-charts {
+	width: 70%;
+	background-color: white;
+	margin: 50px auto;
+	padding: 60px;
+	justify-content: center;
+}
+
+/* beginning for nba-team-stat page */
+
+.team-profile {
+	position: absolute;
+	text-align: center;
+	display: flex;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+}
+
+.team-profile .L {
+	font-weight: bold;
+	font-size: 20px;
+	width: 100%;
+	text-align: center;
+	padding 30px 25px;
+	background-color: yellow;
+	top: 50%;
+	left: 50%;
+	transform: ;
+}
+
+.team-profile .R {
+	width: 400%;
+	text-align: center;
+	background-color: rgb(92, 92, 92)
+}
+
+.team-stat {
+	border-collapse: collapse;
+	width: 90%;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, .15);
+	margin: 50px auto;
+	letter-spacing: 1px;
+	padding: 8px;
+}
+
+/* beginning for player-search page */
+
+.search-box {
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 12vh;
+	background: rgb(129, 4, 0);
+}
+
+.form {
+	width: 600px;
+	height: 55px;
+	display: flex;
+	padding: 10px 50px;
+}
+
+.forminput {
+	flex: 1;
+	border: none;
+	outline: none;
+	padding: 20px;
+}
+
+.search-btn {
+	padding: 10px 50px;
+	background: rgb(158, 158, 158);
+	border: none;
+	outline: none;
+	letter-spacing: 1px;
+	cursor: pointer;
+
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 25px;
+	padding-left: 150px;
+
+}
+
+.sch-profile {
+	float: left;
+	background: rgb(20, 20, 20);
+	text-align: center;
+	padding: 25px;
+	color: white;
+}
+
+/* table in player-search */
+.sch-stats {
+	float: left;
+	background: rgb(187, 186, 186);
+	border: 1px solid;
+}
+
+.search-result {
+	display: flex;
+	padding: 25px;
+	border: 1px solid;
+}
+
+.profile-btn {
+	align-items: center;
+	background-color: #d35220;
+	border: 0;
+	border-radius: 100px;
+	box-sizing: border-box;
+	color: #000000;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 20px;
+	max-width: 480px;
+	min-height: 40px;
+	min-width: 0px;
+	overflow: hidden;
+	padding: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	touch-action: manipulation;
+	transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+	user-select: none;
+	-webkit-user-select: none;
+	vertical-align: middle;
+}
+
+.profile-btn:hover,
+.profile-btn:focus {
+	background-color: #16437E;
+	color: #ffffff;
+}
+
+.profile-btn:active {
+	background: #09223b;
+	color: rgb(255, 255, 255, .7);
+}
+
+.profile-btn:disabled {
+	cursor: not-allowed;
+	background: rgba(0, 0, 0, .08);
+	color: rgba(0, 0, 0, .3);
+}
+
+.table-title {
+	font-size: 20px;
+}
+
+/* beginning of team-search */
+
+.sport-pick {
+	letter-spacing: 2px;
+}
+
+.team-card {
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	padding: 20px;
+	border: 2px solid;
+	background: yellow;
+	flex-direction: row;
+}
+
+.tpic {
+	width: 350px;
+	height: 200px;
+}
+
+.navbutton {
+	margin-left: 20px;
+	padding: 9px 25px;
+	background-color: rgba(0, 136, 169, 1);
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+.searchresult {
+	font-weight: bold;
+	font-size: 25px;
+	text-align: center;
+}

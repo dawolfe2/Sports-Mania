@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+li, a, button {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	color: #edf0f1;
+	text-decoration:none;
+}
+
+header {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 30px 10%;
+	background-color: #FF0000;
+}
+
+.logo {
+	cursor: pointer;
+}
+
+.navigation {
+	list-style: none;
+}
+
+.navigation li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+.navigation li a {
+	transition: all 0.3s ease 0s;
+}
+
+.naviation li a:hover {
+	color: #0088a9
+}
+
+button {
+	margin-left: 20px;
+	padding: 9px 25px;
+	background-color: rgba(0, 136, 169, 1);
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+button:hover {
+	background-color: rgba(0, 136, 169, 0.9);
+}
+
+/* this ends css for navigation */ 
+
+
+
+
+body {
+	background-color: lightyellow
+	
+	
+}
+
+.signup-div {
+	margin: 100px auto;
+	width: 550px;
+	background-color:#0088a9;
+	background-image: linear-gradient(red, yellow);
+	padding: 60px;
+}
+
+.login-div {
+	margin: 100px auto;
+	width: 350px;
+	background-color:#0088a9 ;
+	padding: 60px;
+}
+
+
+.logo {
+	background-color: purple;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.title, .subtitle {
+	text-align: center;
+	color: black
+}
+
+.title {
+	font-weight: bolder;
+	font-size: 35px;
+}
+
+.sub-title {
+	font-size 18px;
+}
+
+.loginform input {
+	font-size: 18px;
+	padding: 10px 20px 10px 5px;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+.username, .password, .Fname, .fullname, .email {
+	display: block;
+	border-radius: 30px;
+	border: 1px solid rgba (0, 0. 0. 0.2)
+	padding 15px;
+	margin: 10px 0;
+	background-color: orange;
+}
+
+.loginform svg {
+	height: 25px;
+	margin-bottom: -5px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.options {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5px 0px;
+	margin-bottom: 30px;
+}
+
+button.submitbtn {
+	width: 100%;
+	padding: 12px 10px;
+	border: none;
+	font-size: 18px;
+	border-radius: 30px;
+	background-color: pink;
+	color: red;
+	margin-bottom: 5px;
+}
+
+.signup {
+	text-align: center;
+}

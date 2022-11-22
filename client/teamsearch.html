@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Team Search</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body onload="keeplive()">
+    <header>
+      <h1 class="sportstitle">Sports Mania</h1>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="teamsearch.html">Teams</a></li>
+          <li><a href="playersearch.html">Players</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      <a id="loginstatus" class="login" href="login.html"
+        ><button id="navbutton" class="navbutton">Login</button></a
+      >
+    </header>
+
+    <div class="search-box">
+      <div class="form">
+        <input class="forminput" id="search" type="text" title="search" placeholder="search team" />
+        <button class="search-btn" onClick="searchteams()">Search for Teams</button>
+      </div>
+
+      <div class="sport-pick">
+        <label for="nba">NBA</label>
+        <input type="radio" name="sport" value="nba" id="radioNBA" checked="checked" />
+    
+        <label for="nfl">NFL</label>
+        <input type="radio" name="sport" value="nfl" id="radioNFL" />
+
+        <label for="nhl">NHL</label>
+        <input type="radio" name="sport" value="nhl" id="radioNHL" />
+      </div>
+    </div>
+
+    <p class="searchresult" id="searchresult"></p>
+    
+    <div class="flex-container">
+      <div id="divt1" class="team-card" style="display:none">
+        <p id="team1">team1</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic1" alt="teampic1 img"/><br>
+        <button class="profile-btn" id="profile1" onClick="profile1()">Profile</button>
+      </div>
+      <div id="divt2" class="team-card" style="display:none">
+        <p id="team2">team2</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic2" alt="teampic2 img"/><br>
+        <button class="profile-btn" id="profile2" onClick="profile2()">Profile</button>
+      </div>
+      <div id="divt3" class="team-card" style="display:none">
+        <p id="team3">team3</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic3" alt="teampic3 img"/><br>
+        <button class="profile-btn" id="profile3" onClick="profile3()">Profile</button>
+      </div>
+      <div id="divt4" class="team-card" style="display:none">
+        <p id="team4">team4</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic4" alt="teampic4 img"/><br>
+        <button class="profile-btn" id="profile4" onClick="profile4()">Profile</button>
+      </div>
+      <div id="divt5" class="team-card" style="display:none">
+        <p id="team5">team5</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic5" alt="teampic5 img"/><br>
+        <button class="profile-btn" id="profile5" onClick="profile5()">Profile</button>
+      </div>
+      <div id="divt6" class="team-card" style="display:none">
+        <p id="team6">team6</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic6" alt="teampic6 img"/><br>
+        <button class="profile-btn" id="profile6" onClick="profile6()">Profile</button>
+      </div>
+      <div id="divt7" class="team-card" style="display:none">
+        <p id="team7">team7</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic7" alt="teampic7 img"/><br>
+        <button class="profile-btn" id="profile7" onClick="profile7()">Profile</button>
+      </div>
+      <div id="divt8" class="team-card" style="display:none">
+        <p id="team8">team8</p>
+        <img src="pics/no-image.jpg" class="tpic" id="teampic8" alt="teampic8 img"/><br>
+        <button class="profile-btn" id="profile8" onClick="profile8()">Profile</button>
+      </div>
+    </div>
+
+    <script src="keeplive.js"></script>
+    <script src="teamsearch.js"></script>
+    <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+  </body>
+</html>

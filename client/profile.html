@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="profile.css" />
+  </head>
+
+  <body onload="keeplive()" class="body">
+    <header>
+      <h1 class="sportstitle">Sports Mania</h1>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="teamsearch.html">Teams</a></li>
+          <li><a href="playersearch.html">Players</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      <a id="loginstatus" class="login" href="login.html"><button id="navbutton" class="navbutton">Login</button></a>
+    </header>
+    
+    <div class="userstatus">
+      <p id="username"></p>
+      <button onclick="logout()">Logout</button>
+    </div>
+    <div>
+    <p class="favtitle">Player Favorites:</p>
+  </div>
+  <div class="pfavs1">
+    <div id="pfav1" class="favorite">
+      <p id="playerfav1name">Player1Favorite</p>
+      <p id="playerfav1team">Player1Favoriteteam</p>
+      <img src="pics/no-image.jpg" id="playerfav1pic" class="ppic" alt="player img" />
+      <p></p>
+      <button id="player1favbutton" onclick="playerfav1link()">Profile</button>
+      <button id="player1removebutton" onclick="removeplayerfav1link()">Remove Favorite</button>
+    </div>
+
+    <div id="pfav2" class="favorite">
+    <p id="playerfav2name">Player2Favorite</p>
+    <p id="playerfav2team">Player2Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav2pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player2favbutton" onclick="playerfav2link()">Profile</button>
+    <button id="player2removebutton" onclick="removeplayerfav2link()">Remove Favorite</button>
+  </div>
+
+    <div id="pfav3" class="favorite">
+    <p id="playerfav3name">Player3Favorite</p>
+    <p id="playerfav3team">Player3Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav3pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player3favbutton" onclick="playerfav3link()">Profile</button>
+    <button id="player3removebutton" onclick="removeplayerfav3link()">Remove Favorite</button>
+  </div>
+
+    <div id="pfav4" class="favorite">
+    <p id="playerfav4name">Player4Favorite</p>
+    <p id="playerfav4team">Player4Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav4pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player4favbutton" onclick="playerfav4link()">Profile</button>
+    <button id="player4removebutton" onclick="removeplayerfav4link()">Remove Favorite</button>
+  </div>
+
+    <div id="pfav5" class="favorite">
+    <p id="playerfav5name">Player5Favorite</p>
+    <p id="playerfav5team">Player5Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav5pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player5favbutton" onclick="playerfav5link()">Profile</button>
+    <button id="player5removebutton" onclick="removeplayerfav5link()">Remove Favorite</button>
+  </div>
+</div>
+  <div class="pfavs1">
+    <div id="pfav6" class="favorite">
+    <p id="playerfav6name">Player6Favorite</p>
+    <p id="playerfav6team">Player6Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav6pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player6favbutton" onclick="playerfav6link()">Profile</button>
+    <button id="player6removebutton" onclick="removeplayerfav6link()">Remove Favorite</button>
+  </div>
+
+    <div id="pfav7" class="favorite">
+    <p id="playerfav7name">Player7Favorite</p>
+    <p id="playerfav7team">Player7Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav7pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player7favbutton" onclick="playerfav7link()">Profile</button>
+    <button id="player7removebutton" onclick="removeplayerfav7link()">Remove Favorite</button>
+  </div>
+
+    <div id="pfav8" class="favorite">
+    <p id="playerfav8name">Player8Favorite</p>
+    <p id="playerfav8team">Player8Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav8pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player8favbutton" onclick="playerfav8link()">Profile</button>
+    <button id="player8removebutton" onclick="removeplayerfav8link()">Remove Favorite</button>
+  </div>
+
+    <div id="pfav9" class="favorite">
+    <p id="playerfav9name">Player9Favorite</p>
+    <p id="playerfav9team">Player9Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav9pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player9favbutton" onclick="playerfav9link()">Profile</button>
+    <button id="player9removebutton" onclick="removeplayerfav9link()">Remove Favorite</button>
+    </div>
+
+    <div id="pfav10" class="favorite">
+    <p id="playerfav10name">Player10Favorite</p>
+    <p id="playerfav10team">Player10Favoriteteam</p>
+    <img src="pics/no-image.jpg" id="playerfav10pic" class="ppic" alt="player img" />
+    <p></p>
+    <button id="player10favbutton" onclick="playerfav10link()">Profile</button>
+    <button id="player10removebutton" onclick="removeplayerfav10link()">Remove Favorite</button>
+    </div>
+  </div>
+
+    <p></p><p></p><p></p><p></p><p></p><p></p>
+    <div>
+      <p class="favtitle">Team Favorites:</p>
+    </div>
+<div class="tfavs1">
+  <div id="tfav1" class="favorite">
+    <p id="teamfav1name">Team1Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav1pic" alt="team img" />
+    <p></p>
+    <button id="team1favbutton" onclick="teamfav1link()">Profile</button>
+    <button id="team1removebutton" onclick="removeteamfav1link()">Remove Favorite</button>
+  </div>
+
+  <div id="tfav2" class="favorite">
+    <p id="teamfav2name">Team2Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav2pic" alt="team img" />
+    <p></p>
+    <button id="team2favbutton" onclick="teamfav2link()">Profile</button>
+    <button id="team2removebutton" onclick="removeteamfav2link()">Remove Favorite</button>
+</div>
+
+<div id="tfav3" class="favorite">
+    <p id="teamfav3name">Team3Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav3pic" alt="team img" />
+    <p></p>
+    <button id="team3favbutton" onclick="teamfav3link()">Profile</button>
+    <button id="team3removebutton" onclick="removeteamfav3link()">Remove Favorite</button>
+  </div>
+
+  <div id="tfav4" class="favorite">
+    <p id="teamfav4name">Team4Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav4pic" alt="team img" />
+    <p></p>
+    <button id="team4favbutton" onclick="teamfav4link()">Profile</button>
+    <button id="team4removebutton" onclick="removeteamfav4link()">Remove Favorite</button>
+  </div>
+
+  <div id="tfav5" class="favorite">
+    <p id="teamfav5name">Team5Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav5pic" alt="team img" />
+    <p></p>
+    <button id="team5favbutton" onclick="teamfav5link()">Profile</button>
+    <button id="team5removebutton" onclick="removeteamfav5link()">Remove Favorite</button>
+  </div>
+</div>
+
+<div class="tfavs2">
+  <div id="tfav6" class="favorite">
+    <p id="teamfav6name">Team6Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav6pic" alt="team img" />
+    <p></p>
+    <button id="team6favbutton" onclick="teamfav6link()">Profile</button>
+    <button id="team6removebutton" onclick="removeteamfav6link()">Remove Favorite</button>
+  </div>
+
+  <div id="tfav7" class="favorite">
+    <p id="teamfav7name">Team7Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav7pic" alt="team img" />
+    <p></p>
+    <button id="team7favbutton" onclick="teamfav7link()">Profile</button>
+    <button id="team7removebutton" onclick="removeteamfav7link()">Remove Favorite</button>
+  </div>
+
+  <div id="tfav8" class="favorite">
+    <p id="teamfav8name">Team8Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav8pic" alt="team img" />
+    <p></p>
+    <button id="team8favbutton" onclick="teamfav8link()">Profile</button>
+    <button id="team8removebutton" onclick="removeteamfav8link()">Remove Favorite</button>
+  </div>
+
+  <div id="tfav9" class="favorite">
+    <p id="teamfav9name">Team9Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav9pic" alt="team img" />
+    <p></p>
+    <button id="team9favbutton" onclick="teamfav9link()">Profile</button>
+    <button id="team9removebutton" onclick="removeteamfav9link()">Remove Favorite</button>
+  </div>
+
+  <div id="tfav10" class="favorite">
+    <p id="teamfav10name">Team10Favorite</p>
+    <img src="pics/no-image.jpg" class="tpic" id="teamfav10pic" alt="team img" />
+    <p></p>
+    <button id="team10favbutton" onclick="teamfav10link()">Profile</button>
+    <button id="team10removebutton" onclick="removeteamfav10link()">Remove Favorite</button>
+  </div>
+</div>
+    <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>

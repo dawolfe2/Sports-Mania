@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NHL Player Profile</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body onload="keeplive()">
+    <header>
+      <h1 class="sportstitle">Sports Mania</h1>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="teamsearch.html">Teams</a></li>
+          <li><a href="playersearch.html">Players</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      <a id="loginstatus" class="login" href="login.html"
+        ><button id="navbutton" class="navbutton">Login</button></a>
+    </header>
+
+    <div class="nbaplayerstats">
+        <div class="row">
+            <div class="columnL">
+              <table class="stat-board" >
+                <thead>
+                  <tr>
+                    <td><span class="playername" id="playername">Player Name</span></td>
+                    <td><button class="favbutton" onclick="favorite()">Favorite</button>
+                    <p id="favmessage"></p></td>
+                  </tr>
+                  <td><span class="playername" id="playerposition">Player Position</span></td>
+                  <tr>
+                    <td colspan="2" align="center"><img src="pics/no-image.jpg" id="playerpic" alt="player img" /></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" align="center"><span class="teamname" id="teamname">Team Name</p></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" align="center">2022 Season Averages:</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="stat" id="stat1">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat2">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat3">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat4">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat5">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat6">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat7">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat8">stat not available</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="stat" id="stat9">stat not available</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+
+            <div class="columnR">
+              <p class="charthead" align="center">Averages of Previous Seasons:</p>
+              <div class="stat-charts">
+                <canvas id="ChartPTS" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartMIN" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartFG" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="Chart3P" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartFT" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartREB" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartAST" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartBLK" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartSTL" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartPF" style="width: 100%; max-width: 700px"></canvas>
+                <canvas id="ChartTO" style="width: 100%; max-width: 700px"></canvas>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="nhlplayerstats.js"></script>
+  </body>
+</html>
