@@ -11,6 +11,7 @@ async function keeplive() {
     if (user != "" && user != null) {
 
         //user information
+        document.getElementById('logout-btn').innerHTML = "Logout";
         document.getElementById('navbutton').innerHTML = `${user}'s profile`;
         document.getElementById('username').innerHTML = `${user}'s profile`;
         userelement.setAttribute('href', 'profile.html');
@@ -60,6 +61,7 @@ async function keeplive() {
                 for (let i = 0; i < 10; i++) {
                     if (playerfavs[i] != null) {
                         switch (playerfavs[i].charAt(0)) {
+
                             //case 1 is nba
                             case '1':
                                 favcode = playerfavs[i]
@@ -138,6 +140,7 @@ async function keeplive() {
                                 });
                                 break;
 
+
                             //case 3 is nhl
                             case '3':
                                 favcode = playerfavs[i]
@@ -184,6 +187,53 @@ async function keeplive() {
                                 document.getElementById(`playerfav${i + 1}pic`).src = picurl;
                                 break;
 
+
+                            //case 2 is nfl
+                            case '2':
+                                favcode = playerfavs[i]
+                                count = 0
+                                index = 0
+                                divider1 = null
+                                divider2 = null
+                                divider3 = null
+
+                                while (index < favcode.length && count < 3) {
+                                    if (count == 0 && favcode[index] == '#') {
+                                        divider1 = index
+                                        count = count + 1
+                                    }
+                                    else if (count == 1 && favcode[index] == '#') {
+                                        divider2 = index
+                                        count = count + 1
+                                    }
+                                    else if (count == 2 && favcode[index] == '#') {
+                                        divider3 = index
+                                        count = count + 1
+                                    }
+                                    index = index + 1
+                                }
+
+                                playerfavid = favcode.substring(1, divider1)
+                                playerfavname = favcode.substring(divider1 + 1, divider2)
+                                playerfavPos = favcode.substring(divider2 + 1, divider3)
+                                playerfavteam = favcode.substring(divider3 + 1)
+                                document.getElementById(`playerfav${i + 1}name`).innerHTML = playerfavname
+                                document.getElementById(`playerfav${i + 1}team`).innerHTML = playerfavteam
+                                document.getElementById(`playerfav${i + 1}name`).style.visibility = "visible";
+                                document.getElementById(`playerfav${i + 1}team`).style.visibility = "visible";
+                                document.getElementById(`playerfav${i + 1}pic`).style.visibility = "visible";
+                                document.getElementById(`player${i + 1}favbutton`).style.visibility = "visible";
+                                document.getElementById(`player${i + 1}removebutton`).style.visibility = "visible";
+                                document.getElementById(`pfav${i + 1}`).style.visibility = "visible";
+                                picurl = `https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/${playerfavid}.png&w=350&h=254`
+                                document.getElementById(`playerfav${i + 1}pic`).src = picurl;
+
+                                playerfavids[i] = playerfavid
+                                playerfavfnames[i] = playerfavname
+                                playerfavlnames[i] = playerfavPos
+                                playerfavteamnames[i] = playerfavteam
+                                playerfavsports[i] = 2
+                                break;
                             default:
                         }
                     }
@@ -241,9 +291,32 @@ async function keeplive() {
                                 teamid = favcode.substring(1, divider1)
                                 teamname = favcode.substring(divider1 + 1)
                                 document.getElementById(`teamfav${i + 1}name`).innerHTML = teamname
-                                //picurlfull = `pics/nbateam/${teamid}.png`
-                                //document.getElementById(`teamfav${i + 1}pic`).src = picurlfull;
+                                picurlfull = `pics/nhlteam/${teamname}.png`
+                                document.getElementById(`teamfav${i + 1}pic`).src = picurlfull;
                                 teamfavsports[i] = 3
+                                teamfavids[i] = teamid
+                                teamfavnames[i] = teamname
+                                break;
+
+                            //case 2 is nfl
+                            case '2':
+                                favcode = teamfavs[i]
+                                count = 0
+                                index = 0
+                                divider1 = null
+                                while (index < favcode.length && count < 1) {
+                                    if (count == 0 && favcode[index] == '#') {
+                                        divider1 = index
+                                        count = count + 1
+                                    }
+                                    index = index + 1
+                                }
+                                teamid = favcode.substring(1, divider1)
+                                teamname = favcode.substring(divider1 + 1)
+                                document.getElementById(`teamfav${i + 1}name`).innerHTML = teamname
+                                picurlfull = `pics/nflteam/${teamname}.png`
+                                document.getElementById(`teamfav${i + 1}pic`).src = picurlfull;
+                                teamfavsports[i] = 2
                                 teamfavids[i] = teamid
                                 teamfavnames[i] = teamname
                                 break;
@@ -268,6 +341,7 @@ async function keeplive() {
 
     }
     else {
+        window.location.href = "login.html";
     }
 }
 
@@ -596,6 +670,13 @@ function playerfav1link() {
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[0]);
             window.location.href = "nhlplayerstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[0]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[0]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[0]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[0]);
+            window.location.href = "nflplayerstats.html";
+            break;
         default:
     }
 }
@@ -614,6 +695,13 @@ function playerfav2link() {
             window.localStorage.setItem('nhlplayerFN', playerfavfnames[1]);
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[1]);
             window.location.href = "nhlplayerstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[1]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[1]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[1]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[1]);
+            window.location.href = "nflplayerstats.html";
             break;
         default:
     }
@@ -634,6 +722,13 @@ function playerfav3link() {
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[2]);
             window.location.href = "nhlplayerstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[2]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[2]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[2]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[2]);
+            window.location.href = "nflplayerstats.html";
+            break;
         default:
     }
 }
@@ -652,6 +747,13 @@ function playerfav4link() {
             window.localStorage.setItem('nhlplayerFN', playerfavfnames[3]);
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[3]);
             window.location.href = "nhlplayerstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[3]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[3]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[3]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[3]);
+            window.location.href = "nflplayerstats.html";
             break;
         default:
     }
@@ -672,6 +774,13 @@ function playerfav5link() {
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[4]);
             window.location.href = "nhlplayerstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[4]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[4]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[4]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[4]);
+            window.location.href = "nflplayerstats.html";
+            break;
         default:
     }
 }
@@ -690,6 +799,13 @@ function playerfav6link() {
             window.localStorage.setItem('nhlplayerFN', playerfavfnames[5]);
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[5]);
             window.location.href = "nhlplayerstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[5]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[5]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[5]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[5]);
+            window.location.href = "nflplayerstats.html";
             break;
         default:
     }
@@ -710,6 +826,13 @@ function playerfav7link() {
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[6]);
             window.location.href = "nhlplayerstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[6]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[6]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[6]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[6]);
+            window.location.href = "nflplayerstats.html";
+            break;
         default:
     }
 }
@@ -728,6 +851,13 @@ function playerfav8link() {
             window.localStorage.setItem('nhlplayerFN', playerfavfnames[7]);
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[7]);
             window.location.href = "nhlplayerstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[7]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[7]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[7]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[7]);
+            window.location.href = "nflplayerstats.html";
             break;
         default:
     }
@@ -748,6 +878,13 @@ function playerfav9link() {
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[8]);
             window.location.href = "nhlplayerstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[8]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[8]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[8]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[8]);
+            window.location.href = "nflplayerstats.html";
+            break;
         default:
     }
 }
@@ -767,6 +904,13 @@ function playerfav10link() {
             window.localStorage.setItem('nhlplayerTeam', playerfavteamnames[9]);
             window.location.href = "nhlplayerstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflplayerID', playerfavids[9]);
+            window.localStorage.setItem('nflplayerFN', playerfavfnames[9]);
+            window.localStorage.setItem('nflplayerPos', playerfavlnames[9]);
+            window.localStorage.setItem('nflplayerTeam', playerfavteamnames[9]);
+            window.location.href = "nflplayerstats.html";
+            break;
         default:
     }
 }
@@ -782,6 +926,11 @@ function teamfav1link() {
             window.localStorage.setItem('nhlTeamID', teamfavids[0]);
             window.localStorage.setItem('nhlTeamName', teamfavnames[0]);
             window.location.href = "nhlteamstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[0]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[0]);
+            window.location.href = "nflteamstats.html";
             break;
         default:
     }
@@ -799,6 +948,11 @@ function teamfav2link() {
             window.localStorage.setItem('nhlTeamName', teamfavnames[1]);
             window.location.href = "nhlteamstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[1]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[1]);
+            window.location.href = "nflteamstats.html";
+            break;
         default:
     }
 }
@@ -814,6 +968,11 @@ function teamfav3link() {
             window.localStorage.setItem('nhlTeamID', teamfavids[2]);
             window.localStorage.setItem('nhlTeamName', teamfavnames[2]);
             window.location.href = "nhlteamstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[2]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[2]);
+            window.location.href = "nflteamstats.html";
             break;
         default:
     }
@@ -831,6 +990,11 @@ function teamfav4link() {
             window.localStorage.setItem('nhlTeamName', teamfavnames[3]);
             window.location.href = "nhlteamstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[3]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[3]);
+            window.location.href = "nflteamstats.html";
+            break;
         default:
     }
 }
@@ -846,6 +1010,11 @@ function teamfav5link() {
             window.localStorage.setItem('nhlTeamID', teamfavids[4]);
             window.localStorage.setItem('nhlTeamName', teamfavnames[4]);
             window.location.href = "nhlteamstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[4]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[4]);
+            window.location.href = "nflteamstats.html";
             break;
         default:
     }
@@ -863,6 +1032,11 @@ function teamfav6link() {
             window.localStorage.setItem('nhlTeamName', teamfavnames[5]);
             window.location.href = "nhlteamstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[5]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[5]);
+            window.location.href = "nflteamstats.html";
+            break;
         default:
     }
 }
@@ -878,6 +1052,11 @@ function teamfav7link() {
             window.localStorage.setItem('nhlTeamID', teamfavids[6]);
             window.localStorage.setItem('nhlTeamName', teamfavnames[6]);
             window.location.href = "nhlteamstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[6]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[6]);
+            window.location.href = "nflteamstats.html";
             break;
         default:
     }
@@ -895,6 +1074,11 @@ function teamfav8link() {
             window.localStorage.setItem('nhlTeamName', teamfavnames[7]);
             window.location.href = "nhlteamstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[7]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[7]);
+            window.location.href = "nflteamstats.html";
+            break;
         default:
     }
 }
@@ -911,6 +1095,11 @@ function teamfav9link() {
             window.localStorage.setItem('nhlTeamName', teamfavnames[8]);
             window.location.href = "nhlteamstats.html";
             break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[8]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[8]);
+            window.location.href = "nflteamstats.html";
+            break;
         default:
     }
 }
@@ -926,6 +1115,11 @@ function teamfav10link() {
             window.localStorage.setItem('nhlTeamID', teamfavids[9]);
             window.localStorage.setItem('nhlTeamName', teamfavnames[9]);
             window.location.href = "nhlteamstats.html";
+            break;
+        case 2:
+            window.localStorage.setItem('nflTeamID', teamfavids[9]);
+            window.localStorage.setItem('nflTeamName', teamfavnames[9]);
+            window.location.href = "nflteamstats.html";
             break;
         default:
     }

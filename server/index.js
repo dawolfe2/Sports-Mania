@@ -38,7 +38,7 @@ const db = mysql.createPool({
 //     database: 'heroku_6790ad1ab9e7025'
 // })
 
-// Login 
+// Login post
 app.post('/api/login', (req, res) => {
 
     const username = req.body.username;
@@ -69,7 +69,7 @@ app.post('/api/login', (req, res) => {
     });
 });
 
-// register new account
+// register new account post
 app.post('/api/register', (req, res) => {
 
     const username = req.body.username;
@@ -103,7 +103,7 @@ app.post('/api/register', (req, res) => {
     })
 });
 
-//add player favorite to user
+//add player favorite to user database
 app.post('/api/favoriteplayer', (req, res) => {
 
     const username = req.body.username;
@@ -273,7 +273,7 @@ app.post('/api/favoriteplayer', (req, res) => {
     });
 });
 
-//add team favorite to user
+//add team favorite to user database
 app.post('/api/favoriteteam', (req, res) => {
 
     const username = req.body.username;
@@ -445,6 +445,7 @@ app.post('/api/favoriteteam', (req, res) => {
     });
 });
 
+//get player favorites from database
 app.post('/api/getfavorites', (req, res) => {
 
     const username = req.body.username;
@@ -461,6 +462,7 @@ app.post('/api/getfavorites', (req, res) => {
     });
 });
 
+//remove player favorite from indicated position
 app.post('/api/removefavoritep1', (req, res) => {
 
     const username = req.body.username;

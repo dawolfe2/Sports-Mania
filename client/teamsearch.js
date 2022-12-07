@@ -92,7 +92,7 @@ async function searchteams() {
                     document.getElementById(teamhtml[itoadd]).innerHTML = response.data._embedded.teamWinStatsList[itotal].name
                     document.getElementById(teamhtml[itoadd]).style.visibility = "visible";
                     teamsID.push(itotal)
-                    picurlfull = "pics/no-image.jpg"
+                    picurlfull = `pics/nflteam/${response.data._embedded.teamWinStatsList[itotal].name}.png`
                     document.getElementById(pichtml[itoadd]).src = picurlfull;
                     document.getElementById(pichtml[itoadd]).style.visibility = "visible";
                     document.getElementById(buttonhtml[itoadd]).style.visibility = "visible";
@@ -132,8 +132,8 @@ async function searchteams() {
                     teamname = response.data.teams[i].name
                     document.getElementById(teamhtml[count]).innerHTML = teamname
                     document.getElementById(teamhtml[count]).style.visibility = "visible";
-                    // picurlfull = `pics/nbateam/${response.data.data[index].id}.png`
-                    // document.getElementById(pichtml[count]).src = picurlfull;
+                    picurlfull = `pics/nhlteam/${teamname}.png`
+                    document.getElementById(pichtml[count]).src = picurlfull;
                     document.getElementById(pichtml[count]).style.visibility = "visible";
                     document.getElementById(buttonhtml[count]).style.visibility = "visible";
                     document.getElementById(`divt${count + 1}`).style.display = "block"

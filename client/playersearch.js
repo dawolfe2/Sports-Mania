@@ -1,6 +1,7 @@
 function searchplayers() {
 
     //clear old values
+    document.getElementById("footerspacing").style.padding = "0px 0px 0px 0px";
     playerhtml = ['playername1', 'playername2', 'playername3', 'playername4', 'playername5', 'playername6', 'playername7', 'playername8']
     teamhtml = ['team1', 'team2', 'team3', 'team4', 'team5', 'team6', 'team7', 'team8']
     buttonhtml = ['profile1', 'profile2', 'profile3', 'profile4', 'profile5', 'profile6', 'profile7', 'profile8']
@@ -13,6 +14,7 @@ function searchplayers() {
     searchprofileFN = [null, null, null, null, null, null, null, null]
     searchprofileLN = [null, null, null, null, null, null, null, null]
     searchprofileTeam = [null, null, null, null, null, null, null, null]
+    searchprofilePosition = [null, null, null, null, null, null, null, null]
     document.getElementById('searchresult').innerHTML = ""
     for (let i = 0; i < 8; i++) {
         document.getElementById(playerhtml[i]).style.visibility = "hidden";
@@ -30,20 +32,12 @@ function searchplayers() {
     const searchreq = document.getElementById('search').value
 
 
-    //API and logic for nba player search
-    nba = false;
-    nfl = false;
-    nhl = false
-    if (document.getElementById('radioNBA').checked) {
-        nba = true;
-    }
-    else if (document.getElementById('radioNFL').checked) {
-        nfl = true;
-    }
-    else if (document.getElementById('radioNHL').checked) {
-        nhl = true;
-    }
+    //sport determined by radio button
+    nba = document.getElementById('radioNBA').checked
+    nfl = document.getElementById('radioNFL').checked
+    nhl = document.getElementById('radioNHL').checked
 
+    //API and logic for nba player search
     if (nba) {
         window.localStorage.setItem('playersearchsport', 0);
         //search for players using input name
@@ -312,11 +306,164 @@ function searchplayers() {
 
     }
 
-    //API and logic for NFL data
-    else if (nfl) {
-        document.getElementById('searchresult').innerHTML = "NFL player search not implemented yet"
-    }
 
+
+    else if (nfl) {
+        window.localStorage.setItem('playersearchsport', 1);
+        done = false
+        teamlist = []
+        //get team list from nfl api
+        for (let i = 0; i < 33; i++) {
+            teamlist.push(null)
+        }
+        const searchteams = {
+            method: 'GET',
+            url: 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams',
+        };
+        axios.request(searchteams).then(function (response) {
+            for (let i = 0; i < 32; i++) {
+                id = response.data.sports[0].leagues[0].teams[i].team.id
+                teamlist[id] = response.data.sports[0].leagues[0].teams[i].team.displayName
+            }
+        }).catch(function (error) {
+            console.error(error);
+        });
+
+        //search nfl api for players
+        playernamelist = []
+        playeridlist = []
+        playerteamlist = []
+        playerpositionlist = []
+        playerjerseylist = []
+        playerheightlist = []
+        playerweightlist = []
+        playeragelist = []
+        iteam = 1
+        while (iteam < 35 && playernamelist.length < 8) {
+            if (iteam == 31) {
+                iteam = 33
+            }
+            const searchplayersnfl = {
+                method: 'GET',
+                url: `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${iteam}/roster`,
+            };
+            axios.request(searchplayersnfl).then(function (response) {
+                i = 0
+                while (i < response.data.athletes[0].items.length && playernamelist.length < 8) {
+                    fname = response.data.athletes[0].items[i].firstName
+                    lname = response.data.athletes[0].items[i].lastName
+                    fullname = `${fname} ${lname}`
+                    teamname = response.data.team.displayName
+                    teamid = response.data.team.id
+                    playerid = response.data.athletes[0].items[i].id
+                    playerposition = response.data.athletes[0].items[i].position.name
+                    if (fullname.toLowerCase().includes(searchreq.toLowerCase()) && response.data.athletes[0].items[i].status.name == 'Active') {
+                        playernamelist.push(fullname)
+                        playeridlist.push(playerid)
+                        playerteamlist.push(teamname)
+                        playerpositionlist.push(playerposition)
+                        playerjerseylist.push(response.data.athletes[0].items[i].jersey)
+                        playerheightlist.push(response.data.athletes[0].items[i].height)
+                        playerweightlist.push(response.data.athletes[0].items[i].weight)
+                        playeragelist.push(response.data.athletes[0].items[i].age)
+
+                    }
+                    nflcards()
+                    i = i + 1
+                }
+                j = 0
+                while (j < response.data.athletes[1].items.length && playernamelist.length < 8) {
+                    fname = response.data.athletes[1].items[j].firstName
+                    lname = response.data.athletes[1].items[j].lastName
+                    fullname = `${fname} ${lname}`
+                    teamname = response.data.team.displayName
+                    teamid = response.data.team.id
+                    playerid = response.data.athletes[1].items[j].id
+                    playerposition = response.data.athletes[1].items[j].position.name
+                    if (fullname.toLowerCase().includes(searchreq.toLowerCase()) && response.data.athletes[1].items[j].status.name == 'Active') {
+                        playernamelist.push(fullname)
+                        playeridlist.push(playerid)
+                        playerteamlist.push(teamname)
+                        playerpositionlist.push(playerposition)
+                        playerjerseylist.push(response.data.athletes[1].items[j].jersey)
+                        playerheightlist.push(response.data.athletes[1].items[j].height)
+                        playerweightlist.push(response.data.athletes[1].items[j].weight)
+                        playeragelist.push(response.data.athletes[1].items[j].age)
+                        nflcards()
+                    }
+                    j = j + 1
+                }
+                k = 0
+                while (k < response.data.athletes[2].items.length && playernamelist.length < 8) {
+                    fname = response.data.athletes[2].items[k].firstName
+                    lname = response.data.athletes[2].items[k].lastName
+                    fullname = `${fname} ${lname}`
+                    teamname = response.data.team.displayName
+                    teamid = response.data.team.id
+                    playerid = response.data.athletes[2].items[k].id
+                    playerposition = response.data.athletes[2].items[k].position.name
+                    if (fullname.toLowerCase().includes(searchreq.toLowerCase()) && response.data.athletes[2].items[k].status.name == 'Active') {
+                        playernamelist.push(fullname)
+                        playeridlist.push(playerid)
+                        playerteamlist.push(teamname)
+                        playerpositionlist.push(playerposition)
+                        playerjerseylist.push(response.data.athletes[2].items[k].jersey)
+                        playerheightlist.push(response.data.athletes[2].items[k].height)
+                        playerweightlist.push(response.data.athletes[2].items[k].weight)
+                        playeragelist.push(response.data.athletes[2].items[k].age)
+                        nflcards()
+                    }
+                    k = k + 1
+                }
+            }).catch(function (error) {
+                console.error(error);
+            });
+            iteam = iteam + 1
+        }
+    }
+}
+
+//called function at the end of nfl api search
+//places gathered player info into html
+function nflcards() {
+    playerprofiles = 0
+    while (playerprofiles < 8 && playerprofiles < playernamelist.length && !done) {
+        document.getElementById(`playerposition${playerprofiles + 1}`).innerHTML = playerpositionlist[playerprofiles]
+        document.getElementById(playerhtml[playerprofiles]).innerHTML = playernamelist[playerprofiles]
+        document.getElementById(playerhtml[playerprofiles]).style.visibility = "visible";
+        document.getElementById(teamhtml[playerprofiles]).innerHTML = playerteamlist[playerprofiles]
+        document.getElementById(teamhtml[playerprofiles]).style.visibility = "visible";
+        document.getElementById(buttonhtml[playerprofiles]).style.visibility = "visible";
+        document.getElementById(pichtml[playerprofiles]).style.visibility = "visible";
+        document.getElementById(stat1html[playerprofiles]).innerHTML = "placeholder"
+        document.getElementById(stat1html[playerprofiles]).style.visibility = "visible";
+        document.getElementById(stat2html[playerprofiles]).innerHTML = "placeholder"
+        document.getElementById(stat2html[playerprofiles]).style.visibility = "visible";
+        document.getElementById(stat3html[playerprofiles]).innerHTML = "placeholder"
+        document.getElementById(stat3html[playerprofiles]).style.visibility = "visible";
+        document.getElementById(stat4html[playerprofiles]).innerHTML = "placeholder"
+        document.getElementById(stat4html[playerprofiles]).style.visibility = "visible";
+        document.getElementById(`divp${playerprofiles + 1}`).style.display = "block"
+        document.getElementById(`${playerprofiles + 1}stat1label`).innerHTML = "Jersey:"
+        document.getElementById(`${playerprofiles + 1}stat2label`).innerHTML = "Height:"
+        document.getElementById(`${playerprofiles + 1}stat3label`).innerHTML = "Weight:"
+        document.getElementById(`${playerprofiles + 1}stat4label`).innerHTML = "Age:"
+        document.getElementById(stat1html[playerprofiles]).innerHTML = playerjerseylist[playerprofiles]
+        document.getElementById(stat2html[playerprofiles]).innerHTML = `${playerheightlist[playerprofiles]} inches`
+        document.getElementById(stat3html[playerprofiles]).innerHTML = `${playerweightlist[playerprofiles]}lbs`
+        document.getElementById(stat4html[playerprofiles]).innerHTML = playeragelist[playerprofiles]
+        searchprofileID[playerprofiles] = playeridlist[playerprofiles]
+        searchprofileFN[playerprofiles] = playernamelist[playerprofiles]
+        searchprofileTeam[playerprofiles] = playerteamlist[playerprofiles]
+        searchprofilePosition[playerprofiles] = playerpositionlist[playerprofiles]
+        // document.getElementById(`playerpic${playerprofiles + 1}`).src = "pics/no-image.jpg"
+        picurl = `https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/${playeridlist[playerprofiles]}.png&w=350&h=254`
+        document.getElementById(`playerpic${playerprofiles + 1}`).src = picurl
+        if (playerprofiles == 7) {
+            done = true
+        }
+        playerprofiles = playerprofiles + 1
+    }
 }
 
 async function profile1() {
@@ -332,6 +479,13 @@ async function profile1() {
         window.localStorage.setItem('nhlplayerTeam', searchprofileTeam[0]);
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[0]);
         window.location.href = "nhlplayerstats.html";
+    }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[0]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[0]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[0]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[0]);
+        window.location.href = "nflplayerstats.html";
     }
 }
 
@@ -349,6 +503,13 @@ async function profile2() {
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[1]);
         window.location.href = "nhlplayerstats.html";
     }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[1]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[1]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[1]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[1]);
+        window.location.href = "nflplayerstats.html";
+    }
 }
 
 async function profile3() {
@@ -364,6 +525,13 @@ async function profile3() {
         window.localStorage.setItem('nhlplayerTeam', searchprofileTeam[2]);
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[2]);
         window.location.href = "nhlplayerstats.html";
+    }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[2]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[2]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[2]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[2]);
+        window.location.href = "nflplayerstats.html";
     }
 }
 
@@ -381,6 +549,13 @@ async function profile4() {
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[3]);
         window.location.href = "nhlplayerstats.html";
     }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[3]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[3]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[3]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[3]);
+        window.location.href = "nflplayerstats.html";
+    }
 }
 
 async function profile5() {
@@ -396,6 +571,13 @@ async function profile5() {
         window.localStorage.setItem('nhlplayerTeam', searchprofileTeam[4]);
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[4]);
         window.location.href = "nhlplayerstats.html";
+    }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[4]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[4]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[4]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[4]);
+        window.location.href = "nflplayerstats.html";
     }
 }
 
@@ -413,6 +595,13 @@ async function profile6() {
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[5]);
         window.location.href = "nhlplayerstats.html";
     }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[5]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[5]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[5]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[5]);
+        window.location.href = "nflplayerstats.html";
+    }
 }
 
 async function profile7() {
@@ -429,6 +618,13 @@ async function profile7() {
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[6]);
         window.location.href = "nhlplayerstats.html";
     }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[6]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[6]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[6]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[6]);
+        window.location.href = "nflplayerstats.html";
+    }
 }
 
 async function profile8() {
@@ -444,5 +640,12 @@ async function profile8() {
         window.localStorage.setItem('nhlplayerTeam', searchprofileTeam[7]);
         window.localStorage.setItem('nhlplayerFN', searchprofileFN[7]);
         window.location.href = "nhlplayerstats.html";
+    }
+    else if (window.localStorage.getItem('playersearchsport') == 1) {
+        window.localStorage.setItem('nflplayerID', searchprofileID[7]);
+        window.localStorage.setItem('nflplayerTeam', searchprofileTeam[7]);
+        window.localStorage.setItem('nflplayerFN', searchprofileFN[7]);
+        window.localStorage.setItem('nflplayerPos', searchprofilePosition[7]);
+        window.location.href = "nflplayerstats.html";
     }
 }

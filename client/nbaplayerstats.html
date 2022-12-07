@@ -3,19 +3,99 @@
   <head>
     <title>NBA Player Profile</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="navbarfooter.css" />
   </head>
   <body onload="keeplive()">
-    <header>
-      <h1 class="sportstitle">Sports Mania</h1>
-        <ul class="navigation">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="teamsearch.html">Teams</a></li>
-          <li><a href="playersearch.html">Players</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      <a id="loginstatus" class="login" href="login.html"
-        ><button id="navbutton" class="navbutton">Login</button></a>
-    </header>
+     <!-- #region  -->
+  <!-- CODE FOR MENU STARTS-->
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png"
+      href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111" />
+
+
+    <title>Hamburger fold-out menu</title>
+
+
+    <script>
+      window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+
+
+  </head>
+  
+
+<body translate="no">
+
+  <nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" />
+
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    
+      <ul id="menu">
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="teamsearch.html">
+          <li>Team Search</li>
+        </a>
+        <a href="playersearch.html">
+          <li>Player Search</li>
+        </a>
+        <a id="loginstatus" href="login.html">
+          <li id="navbutton">Login</li>
+        </a>
+        <a><li id="logout-btn" onclick="logout()"></li></a>
+      </ul>
+    </div>
+  </nav>
+
+  <body>
+    <div id="container">
+      <div id="logo">SPORTS MANIA</div>
+
+
+      <div id=navbar>
+        <ul>
+          
+
+          <!-- <a id="loginstatus" class="login" href="login.html"><button id="navbutton" class="navbutton">Login</button></a> -->
+
+          </u1>
+      </div>
+
+
+
+    </div>
+<!--END OF MENU CODE-->
+  <!-- #endregion -->
 
     <div class="nbaplayerstats">
         <div class="row">
@@ -114,4 +194,103 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="nbaplayerstats.js"></script>
   </body>
+  <!-- #region  -->
+    <!-- FOOTER STARTS HERE-->
+    <!DOCTYPE html>
+    <html lang='en' class=''>
+
+    <head>
+
+      <meta charset='UTF-8'>
+      <title>CodePen Demo</title>
+
+      <meta name="robots" content="noindex">
+
+      <link rel="shortcut icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+      <link rel="mask-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111">
+      <link rel="canonical" href="https://codepen.io/alvarotrigo/pen/vYRRxje">
+
+
+
+
+      <style class="INLINE_PEN_STYLESHEET_ID">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        
+      </style>
+
+
+      <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js"></script>
+      <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-550eae0ce567d3d9182e33cee4e187761056020161aa87e3ef74dc467972c555.js"></script>
+      <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+    </head>
+
+    <body>
+
+      <!DOCTYPE html>
+      <html lang="en">
+
+      <head>
+        <title>Footer Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+      </head>
+
+      <body>
+
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                  <li><a href="#">about us</a></li>
+                  <li><a href="#">our Goal</a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Account</h4>
+                <ul>
+                  <li><a href="#">Signup</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Sports APIs</h4>
+                <ul>
+                  <li><a href="#">Basketball API</a></li>
+                  <li><a href="#">Football API</a></li>
+                  <li><a href="#">Hockeyn API</a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>github</h4>
+                <div class="social-links">
+                  <a href="https://github.com/KingT531/CSI4999"><i class="fab fa-github"></i></a>
+                  <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+                 <a href="#"><i class="fab fa-instagram"></i></a>
+                 <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- #endregion -->
+        <!-- FOOTER ENDS-->
+      </body>
 </html>

@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-/* beginning for navigation bar */
+
+
+/*
+ beginning for navigation bar 
 
 li,
 a,
@@ -11,6 +14,11 @@ button {
 	color: #000000;
 	text-decoration: none;
 	font-weight: bold;
+}
+
+body{
+	
+	background-image: linear-gradient(to bottom right, red, yellow);
 }
 
 header {
@@ -135,7 +143,7 @@ button.login {
 
 .signup-div {
 	margin: 100px auto;
-	width: 550px;
+	width: 600px;
 	background-color: rgb(255, 163, 57);
 	padding: 60px;
 	border-style: solid;
@@ -144,10 +152,11 @@ button.login {
 
 
 .login-div {
-	margin: 100px auto;
-	width: 350px;
+	margin: 95px auto;
+	width: 500px;
 	background-color: rgb(255, 163, 57);
 	padding: 60px;
+
 	border-style: solid;
 	border-color: black;
 }
@@ -268,7 +277,7 @@ button.submitbtn {
 }
 
 @media (min-width: 768px) {
-	..submitbtn {
+	.submitbtn {
 		padding: 13px 50px 13px;
 	}
 }
@@ -287,7 +296,7 @@ button.submitbtn {
 	background-color: white;
 	border-radius: 5px;
 	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, .15);
-	margin: 25px auto;
+	margin: 80px auto;
 	letter-spacing: 1px;
 	padding: 8px;
 }
@@ -359,12 +368,12 @@ button.favbutton {
 .stat-charts {
 	width: 70%;
 	background-color: white;
-	margin: 50px auto;
+	margin: 80px auto;
 	padding: 60px;
 	justify-content: center;
 }
 
-/* beginning for nba-team-stat page */
+/* beginning Basketball-NBA team-stat page */
 
 .team-profile {
 	position: absolute;
@@ -382,7 +391,7 @@ button.favbutton {
 	width: 100%;
 	text-align: center;
 	padding 30px 25px;
-	background-color: yellow;
+	background: gray;
 	top: 50%;
 	left: 50%;
 	transform: ;
@@ -413,12 +422,14 @@ button.favbutton {
 	align-items: center;
 	width: 100%;
 	height: 12vh;
+	padding-top: 26px;
+	margin-top: 80px;
 	background: rgb(129, 4, 0);
 }
 
 .form {
 	width: 600px;
-	height: 55px;
+	height: 60px;
 	display: flex;
 	padding: 10px 50px;
 }
@@ -457,6 +468,10 @@ button.favbutton {
 }
 
 /* table in player-search */
+.footerspacing {
+	padding-bottom: 500px;
+}
+
 .sch-stats {
 	float: left;
 	background: rgb(187, 186, 186);
@@ -531,7 +546,7 @@ button.favbutton {
 	text-align: center;
 	padding: 20px;
 	border: 2px solid;
-	background: yellow;
+	background: gray;
 	flex-direction: row;
 }
 
@@ -554,4 +569,57 @@ button.favbutton {
 	font-weight: bold;
 	font-size: 25px;
 	text-align: center;
+}
+
+/* beginning of football-NFL team-stat page */
+
+.fteam-profile {
+	padding-top: 50px;
+	position: absolute;
+	text-align: center;
+	display: flex;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 900px;
+
+}
+
+.football-L {
+	float: left;
+	width: 40%;
+	background-color: gray;
+	padding-top: 30px;
+}
+
+.football-R {
+	float: right;
+	width: 60%;
+	background-color: rgb(255, 255, 255);
+	border-style: ridge;
+	border-color: black;
+}
+
+.fb-game-stat,
+.fb-position-stat {
+	border-collapse: collapse;
+	width: 90%;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, .15);
+	margin: 50px auto;
+	letter-spacing: 1px;
+	padding: 1px;
+}
+
+.fb-position-stat tr td {
+	padding: 5px;
+}
+
+.fb-game-stat tr td {
+	padding: 5px;
+}
+
+.teamname {
+	font-size: 25px;
 }

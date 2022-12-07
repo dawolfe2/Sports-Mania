@@ -61,8 +61,7 @@ button:hover {
 
 
 body {
-	background-color: lightyellow
-	
+	background-image: linear-gradient(to bottom right, red, yellow);
 	
 }
 

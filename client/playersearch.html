@@ -3,20 +3,109 @@
   <head>
     <title>Player Search</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="navbarfooter.css" />
   </head>
 
   <body onload="keeplive()">
-    <header>
-      <h1 class="sportstitle">Sports Mania</h1>
-        <ul class="navigation">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="teamsearch.html">Teams</a></li>
-          <li><a href="playersearch.html">Players</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      <a id="loginstatus" class="login" href="login.html"
-        ><button id="navbutton" class="navbutton">Login</button></a>
-    </header>
+    <!-- #region  -->
+  <!-- CODE FOR MENU STARTS-->
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png"
+      href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111" />
+
+
+    <title>Hamburger fold-out menu</title>
+
+
+    <script>
+      window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+
+
+  </head>
+  
+
+<body translate="no">
+
+  <nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" />
+
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    
+      <ul id="menu">
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="teamsearch.html">
+          <li>Team Search</li>
+        </a>
+        <a href="playersearch.html">
+          <li>Player Search</li>
+        </a>
+        <a id="loginstatus" href="login.html">
+          <li id="navbutton">Login</li>
+        </a>
+        <a><li id="logout-btn" onclick="logout()"></li></a>
+      </ul>
+    </div>
+  </nav>
+
+  <body>
+    <div id="container">
+      <div id="logo">SPORTS MANIA</div>
+
+
+      <div id=navbar>
+        <ul>
+
+          <!-- <a id="loginstatus" class="login" href="login.html"><button id="navbutton" class="navbutton">Login</button></a> -->
+
+          </u1>
+      </div>
+<style>
+  .body {
+    margin: 0px;
+    padding-top: -20px;
+
+
+    background: #1d1b1b;
+    color: #cdcdcd;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+  }
+</style>
+
+
+    </div>
+<!--END OF MENU CODE-->
+  <!-- #endregion -->
 
 
     <div class="search-box">
@@ -37,7 +126,7 @@
     </div>
 
     <p class="searchresult" id="searchresult"></p>
-
+  <div id="footerspacing" class="footerspacing">
     <div class="flex-container">
       
       <div id="divp1" class="search-result" style="display:none">
@@ -45,7 +134,7 @@
           <button class ="profile-btn" id="profile1" onClick="profile1()">Profile</button>
           <p id="playername1">player1</p>
           <p id="playerposition1"></p>
-          <img src="pics/no-image.jpg" id="playerpic1" alt="player1 img" />
+          <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic1" alt="player1 img" />
           <p id="team1">team1</p>
         </div>
         <table class="sch-stats">
@@ -78,7 +167,7 @@
             <button class ="profile-btn" id="profile2" onClick="profile2()">Profile</button>
             <p id="playername2">player2</p>
             <p id="playerposition2"></p>
-            <img src="pics/no-image.jpg" id="playerpic2" alt="player2 img" />
+            <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic2" alt="player2 img" />
             <p id="team2">team2</p>
           </div>
           <table class="sch-stats">
@@ -111,7 +200,7 @@
           <button class ="profile-btn" id="profile3" onClick="profile3()">Profile</button>
           <p id="playername3">player3</p>
           <p id="playerposition3"></p>
-          <img src="pics/no-image.jpg" id="playerpic3" alt="player3 img" />
+          <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic3" alt="player3 img" />
           <p id="team3">team3</p>
         </div>
         <table class="sch-stats">
@@ -144,7 +233,7 @@
             <button class ="profile-btn" id="profile4" onClick="profile4()">Profile</button>
             <p id="playername4">player4</p>
             <p id="playerposition4"></p>
-            <img src="pics/no-image.jpg" id="playerpic4" alt="player4 img" />
+            <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic4" alt="player4 img" />
             <p id="team4">team4</p>
           </div>
           <table class="sch-stats">
@@ -177,7 +266,7 @@
               <button class ="profile-btn" id="profile5" onClick="profile5()">Profile</button>
               <p id="playername5">player5</p>
               <p id="playerposition5"></p>
-              <img src="pics/no-image.jpg" id="playerpic5" alt="player5 img" />
+              <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic5" alt="player5 img" />
               <p id="team5">team5</p>
             </div>
             <table class="sch-stats">
@@ -210,7 +299,7 @@
                 <button class ="profile-btn" id="profile6" onClick="profile6()">Profile</button>
                 <p id="playername6">player6</p>
                 <p id="playerposition6"></p>
-                <img src="pics/no-image.jpg" id="playerpic6" alt="player6 img" />
+                <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic6" alt="player6 img" />
                 <p id="team6">team6</p>
               </div>
               <table class="sch-stats">
@@ -243,7 +332,7 @@
                   <button class ="profile-btn" id="profile7" onClick="profile7()">Profile</button>
                   <p id="playername7">player7</p>
                   <p id="playerposition7"></p>
-                  <img src="pics/no-image.jpg" id="playerpic7" alt="player7 img" />
+                  <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic7" alt="player7 img" />
                   <p id="team7">team7</p>
                 </div>
                 <table class="sch-stats">
@@ -276,7 +365,7 @@
                     <button class ="profile-btn" id="profile8" onClick="profile8()">Profile</button>
                     <p id="playername8">player8</p>
                     <p id="playerposition8"></p>
-                    <img src="pics/no-image.jpg" id="playerpic8" alt="player8 img" />
+                    <img onerror="this.src='pics/no-image.jpg'" src="pics/no-image.jpg" id="playerpic8" alt="player8 img" />
                     <p id="team8">team8</p>
                   </div>
                   <table class="sch-stats">
@@ -304,10 +393,110 @@
                     </table>
                   </div>
     </div>
-
+  </div>
   
     <script src="keeplive.js"></script>
     <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
     <script src="playersearch.js"></script>
   </body>
+  <!-- #region  -->
+    <!-- FOOTER STARTS HERE-->
+    <!DOCTYPE html>
+    <html lang='en' class=''>
+
+    <head>
+
+      <meta charset='UTF-8'>
+      <title>CodePen Demo</title>
+
+      <meta name="robots" content="noindex">
+
+      <link rel="shortcut icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+      <link rel="mask-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111">
+      <link rel="canonical" href="https://codepen.io/alvarotrigo/pen/vYRRxje">
+
+
+
+
+      <style class="INLINE_PEN_STYLESHEET_ID">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        
+      </style>
+
+
+      <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js"></script>
+      <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-550eae0ce567d3d9182e33cee4e187761056020161aa87e3ef74dc467972c555.js"></script>
+      <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+    </head>
+
+    <body>
+
+      <!DOCTYPE html>
+      <html lang="en">
+
+      <head>
+        <title>Footer Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+      </head>
+
+      <body>
+
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                  <li><a href="#">about us</a></li>
+                  <li><a href="#">our Goal</a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Account</h4>
+                <ul>
+                  <li><a href="#">Signup</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Sports APIs</h4>
+                <ul>
+                  <li><a href="#">Basketball API</a></li>
+                  <li><a href="#">Football API</a></li>
+                  <li><a href="#">Hockeyn API</a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>github</h4>
+                <div class="social-links">
+                  <a href="https://github.com/KingT531/CSI4999"><i class="fab fa-github"></i></a>
+                  <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+                 <a href="#"><i class="fab fa-instagram"></i></a>
+                 <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </footer>
+
+        <!-- #endregion -->
+        <!-- FOOTER ENDS-->
+      </body>
 </html>

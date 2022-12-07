@@ -4,6 +4,7 @@ async function keeplive() {
     user = window.localStorage.getItem('user');
     var userelement = document.getElementById('loginstatus');
     if (user != "" && user != null) {
+        document.getElementById('logout-btn').innerHTML = "Logout";
         document.getElementById('navbutton').innerHTML = `${user}'s profile`;
         userelement.setAttribute('href', 'profile.html');
     }
@@ -14,6 +15,8 @@ async function keeplive() {
 
     //fill html elements with data
     document.getElementById('teamname').innerHTML = teamname
+    picurlfull = `pics/nhlteam/${teamname}.png`
+    document.getElementById('teampic').src = picurlfull;
 
     //call nhl api
     const searchteams = {
@@ -22,7 +25,7 @@ async function keeplive() {
     };
 
     axios.request(searchteams).then(function (response) {
-        console.log(response.data.teams[0].teamStats[0].splits[0].stat)
+        //console.log(response.data.teams[0].teamStats[0].splits[0].stat)
         games = response.data.teams[0].teamStats[0].splits[0].stat.gamesPlayed
         win = response.data.teams[0].teamStats[0].splits[0].stat.wins
         lost = response.data.teams[0].teamStats[0].splits[0].stat.losses
@@ -30,6 +33,7 @@ async function keeplive() {
         goalsagainstpergame = response.data.teams[0].teamStats[0].splits[0].stat.goalsAgainstPerGame
         goalspergame = response.data.teams[0].teamStats[0].splits[0].stat.goalsPerGame
         faceoffwinpct = response.data.teams[0].teamStats[0].splits[0].stat.faceOffWinPercentage
+        document.getElementById('gamesplayed').innerHTML = games
         document.getElementById('gamesplayed').innerHTML = games
         document.getElementById('gameswon').innerHTML = win
         document.getElementById('gameslost').innerHTML = lost

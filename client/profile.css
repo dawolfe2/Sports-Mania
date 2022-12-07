@@ -17,7 +17,7 @@
     font-size: 50px;
     text-align: center;
     width: 50%;
-    margin: auto;
+    margin: 50px auto;
 }
 
 .userstatus {
@@ -64,4 +64,9 @@ button {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+}
+.logout-btn
+{
+  position: absolute;
+  z-index: 2000;
 }
